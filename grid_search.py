@@ -30,7 +30,8 @@ def main():
         SVC(),
         tuned_parameters,  # 最適化したいパラメータセット
         cv=5,  # 交差検定の回数
-        scoring='%s_weighted' % score  # モデルの評価関数の指定
+        scoring='%s_weighted' % score,  # モデルの評価関数の指定
+        n_jobs=-1
     )
     clf.fit(train_data, train_label)
 
