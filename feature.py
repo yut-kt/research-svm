@@ -24,5 +24,5 @@ class Feature:
         :param sentence: 特徴量へ変換したい文
         :return: 特徴量へ変換されたリスト
         """
-        return [self.__feature_dict[morpheme] for morpheme in self.__tagger.parse(sentence)
+        return [self.__feature_dict[morpheme] for morpheme in self.__tagger.parse(sentence).split()
                 if morpheme in self.__feature_dict]
